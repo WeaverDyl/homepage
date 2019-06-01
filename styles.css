@@ -19,6 +19,7 @@ body {
     padding: .25em;
     border-radius: 20px;
     text-align: center;
+    margin-bottom: .5em;
 }
 
 #time {
@@ -30,9 +31,21 @@ body {
 }
 
 .weather-container {
+    width: 40%;
+    background-color: #2c2d39;
+    padding: .5em;
+    border-radius: 20px;
+    text-align: center;
+}
 
+.inline {
+    display: inline-block;
 }
 
 .link-container {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+    margin: 1em 0em;
 }
