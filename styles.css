@@ -19,7 +19,7 @@ body {
     padding: .25em;
     border-radius: 20px;
     text-align: center;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
 }
 
 #time {
@@ -46,6 +46,34 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     width: 50%;
     margin: 1em 0em;
+}
+
+.link-set {
+    padding: 1em;
+    background-color: #2c2d39;
+    border-radius: 20px;
+    font-size: .85rem;
+    height: 10em;
+    margin: 0em .5em;
+}
+
+.link-title { 
+    align-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0em 0em .35em 0em;
+}
+
+.link {
+    color: #e1e1e1;
+    text-decoration: none;
+    display: block;
+    margin: .5em 0em;
+}
+
+.link:hover {
+    color: #e1e1e1;
 }
