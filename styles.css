@@ -1,0 +1,38 @@
+body {
+    color: #e1e1e1;
+    background-color: #21222b;
+    margin: 0px;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.time-date {
+    width: 50%;
+    background: #2c2d39;
+    padding: .25em;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#time {
+    font-size: 3.5rem;
+}
+
+#date {
+    font-size: 1.5rem;
+}
+
+.weather-container {
+
+}
+
+.link-container {
+
+}

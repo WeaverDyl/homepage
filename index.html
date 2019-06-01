@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head
+    <head>
 	<meta charset="UTF-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css">
 	
 	<title>Homepage</title>
     </head>
 
     <body>
         <div class="container">
-	    <div id="time">
-	        
+	    <div class="time-date">
+	    	<div id="time"></div>
+		<div id="date"></div>
 	    </div>
 
-	    <div id="weather">
+	    <div class="weather-container">
 	    
 	    </div>
 
-	    <div id="links">
+	    <div class="link-container">
 	    
 	    </div>
         </div>    
     </body>
+
+    <script>
+	function getCurrTime() {
+	    let date = new Date();
+	    let sec = date.getSeconds();
+	    let min = date.getMinutes();
+	    let hour = date.getHours();
+	    
+	    return (hour < 10 ? ("0" + hour) : hour) + ":" +
+		   (min < 10 ? ("0" + min) : min) + ":" +
+		   (sec < 10 ? ("0" + sec) : sec);
+	}
+	
+	function getDate() {
+	    let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+	    let date = new Date();
+	    return days[date.getDay()] + ", " + date.toLocaleDateString()
+	}
+
+	window.onload = () => {
+	   
+	    // Clock 
+	    document.getElementById("time").innerHTML = getCurrTime();
+	    setInterval(() => {
+	    	document.getElementById("time").innerHTML = getCurrTime();
+	    },100);
+
+	    // Date
+	    document.getElementById("date").innerHTML = getDate();
+	}
+    </script>
 </html>
