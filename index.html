@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap.min.css">
         <link rel="stylesheet" href="styles.css">
 	
 	<title>Homepage</title>
@@ -73,12 +73,11 @@
 	}
 
 	window.onload = () => {
-            // WEATHER API: Hagerstown ID --> "4357141", College Park ID --> "4351977"
 	    let hagerstownID = "4357141";
 	    let collegeParkID = "4351977";
 	    let xhr = new XMLHttpRequest();
             // Request to open weather map
-            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=4357141&units=imperial&appid=e5b292ae2f9dae5f29e11499c2d82ece');
+            xhr.open('GET', `http://api.openweathermap.org/data/2.5/weather?id=${4357141}&units=imperial&appid=e5b292ae2f9dae5f29e11499c2d82ece`);
             xhr.onload = () => {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
