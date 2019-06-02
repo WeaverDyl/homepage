@@ -1,2 +1,4 @@
 # homepage
-my browser homepage for my Arch machine
+My browser homepage for my Arch machine.
+
+![](https://i.imgur.com/Ftri3t8.png)
