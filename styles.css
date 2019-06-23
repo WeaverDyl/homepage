@@ -13,6 +13,16 @@ body {
     flex-direction: column;
 }
 
+.welcome {
+	width: 50%;
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+#welcome-text {
+	font-size: 5rem;
+}
+
 .time-date {
     width: 50%;
     background: #2c2d39;
@@ -60,7 +70,7 @@ body {
     margin: 0em .5em;
 }
 
-.link-title { 
+.link-title {
     align-content: center;
     font-size: 1.1rem;
     font-weight: 600;
