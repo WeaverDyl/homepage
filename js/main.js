@@ -66,6 +66,8 @@ function setDateTime() {
 }
 
 async function main() {
+	setDateTime();
+
 	try {
 		let [city, zip, country] = await getLocation();
 		await setWeather(city, zip, country);
@@ -74,8 +76,6 @@ async function main() {
 		console.log(e);
 		document.getElementById("weather-text").innerHTML = "";
 	}
-
-	setDateTime();
 }
 
 main();
