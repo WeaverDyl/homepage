@@ -3,45 +3,51 @@
 	<head>
       	<meta charset="UTF-8">
       	<meta name="viewport" content="width=device-width, initial-scale=1">
-      	<link rel="stylesheet" href="bootstrap.min.css">
-      	<link rel="stylesheet" href="styles.css">
-      	<title>Homepage</title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/styles.css">
+
+		<title>Homepage</title>
    	</head>
 
    	<body>
 		<div class="container">
 			<div class="welcome">
-				<div id="welcome-text">Welcome</div>
+				<h1 class="display-3" id="welcome-text">Welcome</h1>
 			</div>
 
 			<div class="time-date">
-            	<div id="time"></div>
-            	<div id="date"></div>
+            	<h2 id="datetime"></h2>
          	</div>
 
          	<div class="weather-container">
-        		<div id="weather-description" class="inline"></div>
-            	<div class="inline">-</div>
-            	<div id="temp" class="inline"></div>
+				<h2 id="weather-text">
+					<span id="temp-location"></span>
+					<span id="weather-space"> - </span>
+					<span id="weather-icon"></span>
+					<span id="weather"></span>
+				</h2>
          	</div>
 
         	<div class="link-container">
             	<div class="link-set" id="daily">
-               		<div class="link-title">Daily</div>
+               		<p class="link-title link-daily">Daily</p>
                		<a class="link" href="https://www.github.com">Github</a>
                		<a class="link" href="https://www.drive.google.com">Drive</a>
                		<a class="link" href="https://www.mail.google.com">Gmail</a>
             	</div>
 
             	<div class="link-set" id="media">
-               		<div class="link-title">Media</div>
+               		<p class="link-title link-media">Media</p>
                		<a class="link" href="https://www.youtube.com">YouTube</a>
                		<a class="link" href="https://www.netflix.com">Netflix</a>
                		<a class="link" href="https://www.hulu.com">Hulu</a>
             	</div>
 
             	<div class="link-set" id="reddit">
-               		<div class="link-title">Reddit</div>
+               		<p class="link-title link-reddit">Reddit</p>
                		<a class="link" href="https://www.reddit.com">Front Page</a>
                		<a class="link" href="https://www.reddit.com/r/umd">UMD</a>
                		<a class="link" href="https://www.reddit.com/r/unixporn">UnixPorn</a>
@@ -49,59 +55,8 @@
     		</div>
       	</div>
 
-      	<script>
-        	function getCurrTime() {
-            	let date = new Date();
-             	let sec = date.getSeconds();
-             	let min = date.getMinutes();
-             	let hour = date.getHours();
-
-             	return (hour < 10 ? ("0" + hour) : hour) + ":" +
-         	   			(min < 10 ? ("0" + min) : min) + ":" +
-         	   			(sec < 10 ? ("0" + sec) : sec);
-         	}
-
-         	function getDate() {
-             	let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-             	let date = new Date();
-             	return days[date.getDay()] + ", " + date.toLocaleDateString();
-         	}
-
-         	function capitalizeWords(words) {
-             	let lower = String(words).toLowerCase();
-
-             	return lower.split(' ').map((s) => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
-         	}
-
-         	window.onload = () => {
-             	let hagerstownID = "4357141";
-             	let collegeParkID = "4351977";
-             	let xhr = new XMLHttpRequest();
-                // Request to open weather map
-                xhr.open('GET', `http://api.openweathermap.org/data/2.5/weather?id=${4357141}&units=imperial&appid=e5b292ae2f9dae5f29e11499c2d82ece`);
-                xhr.onload = () => {
-                	if (xhr.readyState === 4) {
-                		if (xhr.status === 200) {
-                        	let json = JSON.parse(xhr.responseText);
-                            document.getElementById("temp").innerHTML = json.main.temp.toFixed(0) + "° F";
-                                document.getElementById("weather-description").innerHTML = capitalizeWords(json.weather[0].description);
-                        } else {
-                            console.log('error msg: ' + xhr.status);
-                        }
-                    }
-                }
-                xhr.send();
-
-             	// Clock
-             	document.getElementById("time").innerHTML = getCurrTime();
-             	setInterval(() => {
-             		document.getElementById("time").innerHTML = getCurrTime();
-             	},100);
-
-             	// Date
-             	document.getElementById("date").innerHTML = getDate();
-         	}
-      	</script>
+		<script type="text/javascript" src="js/weather.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
 
