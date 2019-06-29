@@ -38,7 +38,7 @@ async function setWeather(city, zip, country) {
 	weather.innerHTML = `${weatherDescription}`;
 
 	// Update every 10 minutes
-	setTimeout(setWeather, 600000, city, country);
+	setTimeout(setWeather, 1000, city, zip, country);
 }
 
 function formatTime(time) {
