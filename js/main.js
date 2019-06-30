@@ -51,7 +51,7 @@ async function setWeather(city, zip, country) {
 	let weatherIcon = document.getElementById("weather-icon");
 	let weather = document.getElementById("weather");
 
-	let weatherAPI = `http://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&units=imperial&appid=e5b292ae2f9dae5f29e11499c2d82ece`;
+	let weatherAPI = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&units=imperial&appid=e5b292ae2f9dae5f29e11499c2d82ece`;
 
 	let response = await(fetch(weatherAPI));
 	let json = await(response.json());
