@@ -3,6 +3,35 @@ let capitalizeWords = str => str.split(' ')
 								.map((word) => word.charAt(0).toUpperCase() + word.substring(1))
 								.join(' ');
 
+function timeMessage() {
+	// A possible welcome message that says "Good morning/afternoon/night" depending on time. Used in generateWelcome().
+	let currTime = new Date().getHours();
+
+	if (currTime > 0 && currTime < 5) {
+		return "Good Night";
+	} else if (currTime >= 5 && currTime < 12) {
+		return "Good Morning";
+	} else if (currTime >= 12 && currTime < 17) {
+		return "Good Afternoon";
+	} else if (currTime >= 17 && currTime < 20) {
+		return "Good Evening";
+	} else {
+		return "Good Night";
+	}
+
+	return currTime;
+}
+
+function generateWelcome() {
+	// Generates dynamic welcome messages
+	let welcomeElement = document.getElementById('welcome-text');
+	let possibleWelcomes = ["Welcome", "Hello There", timeMessage()];
+
+	let chosenWelcome = possibleWelcomes[Math.floor(Math.random() * possibleWelcomes.length)];
+
+	welcomeElement.innerHTML = chosenWelcome;
+}
+
 async function getLocation() {
 	// Get the users location for displaying and getting weather
 	let locationAPI = 'https://www.geoip-db.com/json/';
@@ -66,6 +95,7 @@ function setDateTime() {
 }
 
 async function main() {
+	generateWelcome();
 	setDateTime();
 
 	try {
