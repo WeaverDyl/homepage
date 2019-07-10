@@ -1,4 +1,3 @@
-// Put divs and stuff here for global use (bad, but who cares)
 let capitalizeWords = str => str.split(' ')
 								.map((word) => word.charAt(0).toUpperCase() + word.substring(1))
 								.join(' ');
