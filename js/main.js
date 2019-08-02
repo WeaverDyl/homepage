@@ -1,4 +1,4 @@
-let capitalizeWords = str => str.split(' ')
+const capitalizeWords = str => str.split(' ')
 								.map((word) => word.charAt(0).toUpperCase() + word.substring(1))
 								.join(' ');
 
@@ -33,7 +33,7 @@ function generateWelcome() {
 
 async function getLocation() {
 	// Get the users location for displaying and getting weather
-	let locationAPI = 'https://www.geoip-db.com/json/';
+	const locationAPI = 'https://www.geoip-db.com/json/';
 
 	let response = await fetch(locationAPI);
 	let json = await response.json();
